@@ -1,1 +1,8 @@
-theme: jekyll-theme-modernist
+title: 'Steve Oliver'
+description: 'Web developer, Drupal Commerce specialist'
+theme: jekyll-theme-architect
+github:
+  is_user_page: true
+  is_project_page: false
+google:
+  fonts: Open+Sans|Oswald|Saira+Extra+Condensed
