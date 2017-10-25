@@ -54,7 +54,7 @@ So I started work with Olaf Karsten on the 8.x-1.x branch of [Commerce Product B
 
 While the project is still very much -dev, within a few months we've built the basic functionality for creating, administering, and purchasing static product bundles, and feel that the basic entity architecture should well support the upcoming work on support for dynamic or user-chosen bundles.  See ongoing [discussion about the 8.x version](https://www.drupal.org/node/2799643) and [all open 8.x-1.x issues for Commerce Product Bundle](https://www.drupal.org/project/issues/commerce_product_bundle?text=&status=Open&version=8.x).
 
-**Special pricing** - We needed to provide pricing based on several different criteria.  By implementing a few custom 'commerce_price.price_resolver' services, we were able to accomplish with a just few fields and php classes, instead of something like a Commerce Price List module.
+**Special pricing** - We needed to provide pricing based on several different criteria.  By implementing a few custom 'commerce_price.price_resolver' services, we were able to accomplish what we needed with just a few fields and php classes instead of something like a Commerce Price List module.
 
 **Promotions** - The new [Promotions and Coupons](https://docs.drupalcommerce.org/commerce2/user-guide/promotions) in Commerce 2 made it easy to consolidate our old offer codes system (don't ask!) into simple coupons in combination with special pricing.
 
