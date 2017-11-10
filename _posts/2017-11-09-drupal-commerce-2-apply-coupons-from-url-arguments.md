@@ -16,9 +16,9 @@ Two things need to happen:
 
 The [KernelEvents::REQUEST](https://api.drupal.org/api/drupal/vendor!symfony!http-kernel!KernelEvents.php/constant/KernelEvents%3A%3AREQUEST/8.4.x) event is [dispatched by the Symfony HTTP kernel](https://api.drupal.org/api/drupal/vendor%21symfony%21http-kernel%21HttpKernel.php/function/HttpKernel%3A%3AhandleRaw/8.4.x) in the first part of the page request life cycle and allows subscribers to alter the request that is sent to Drupal.  In our case, we want to check if the request contains a `coupons` parameter.
 
-So we'll create and regiester one basic event subscriber that looks for the query arg and saves it for later.
+So we'll create and register one basic event subscriber that looks for the query arg and saves it for later.
 
-We'll call it `my_module.url_coupon_subscriber`.
+We'll call it 'my_module.url_coupon_subscriber'.
 
 `my_module.services.yml`:
 {% highlight yaml %}
@@ -147,7 +147,7 @@ class UrlCouponSubscriber implements EventSubscriberInterface {
 
 {% endhighlight %}
 
-If the parameter exists, we just want to save it's value[s] in the current user's session.  We don't neccessarily want to load them when they are passed in.  We may not ever have an order, so all we want to do is save the coupon codes for now.  But knowing that later we will want to check if coupons exist, are valid, and apply them to an order, we'll create one additional method, `::getUrlCoupons`.
+If the parameter exists, we just want to save the coupon codes in the current user's session.  We don't neccessarily want to load them when they are passed in.  We may not ever have an order, so all we want to do is save the coupon codes for now.  But knowing that later we will want to check if coupons exist, are valid, and to be able to apply them to an order, there's a `::getUrlCoupons` method.
 
 ## Step 2: Implement an order processor to apply the coupons.
 
