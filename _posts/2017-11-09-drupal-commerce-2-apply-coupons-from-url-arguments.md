@@ -149,7 +149,7 @@ class UrlCouponSubscriber implements EventSubscriberInterface {
 
 If the parameter exists, we just want to save the coupon codes in the current user's session.  We don't neccessarily want to load them when they are passed in.  We may not ever have an order, so all we want to do is save the coupon codes for now.  But knowing that later we will want to check if coupons exist, are valid, and to be able to apply them to an order, there's a `::getUrlCoupons` method.
 
-## Step 2: Implement an order processor to apply the coupons.
+## Step 2: Implement an order processor to apply the coupons
 
 By tagging a service 'commerce_order.order_processor', the Order module will allow our code to respond to the [Order Refresh](https://github.com/drupalcommerce/commerce/blob/8.x-2.x/modules/order/src/OrderRefresh.php#L155) process and make changes to the order.
 
