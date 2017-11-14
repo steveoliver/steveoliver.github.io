@@ -205,9 +205,12 @@ class AddUrlCoupons implements OrderProcessorInterface {
    * {@inheritdoc}
    */
   public function process(OrderInterface $order) {
-    if ($coupons = $this->urlCouponSubscriber->getUrlCoupons()) {
-      foreach ($coupons as $coupon) {
-        $order->get('coupons')->appendItem($coupon);
+    foreach ($this->urlCouponSubscriber->getUrlCoupons() as $coupon) {
+      // Only apply coupons to an order once.
+      if ($order->get('coupons')->filter(function ($item) use ($coupon) {
+        return $item->target_id !== $coupon->id();
+      })) {
+        $order->get('coupons')->appendItem($coupon->id());
       }
     }
   }
