@@ -9,7 +9,7 @@ If you decide not to enable the Coupon Redemption pane in your checkout flow, bu
 
 Two things need to happen:
 
-1. Look for coupon codes in a specific URL argument (`?coupons=ABC123,DEF456`) and save them to the users's session.
+1. Look for coupon codes in a specific URL argument (`?coupons=ABC123,DEF456`) and save them to the user's session.
 2. Implement an order processor that can check for those codes and apply them to an order (if and when an order/cart exists for the session).
 
 ## Step 1: Listen for the KernelEvents::REQUEST event
