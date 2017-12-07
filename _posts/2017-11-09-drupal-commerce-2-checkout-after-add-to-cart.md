@@ -5,7 +5,7 @@ description: How to redirect a customer after adding an item to their cart.
 
 # Drupal Commerce 2: Go to checkout after adding to cart
 
-There are times when you want to redirect a customer after some event.  For example, for some types of products you may want to redirect the customer directly to checkout instead of leave them on the current page (as is the default).
+There are times when you want to redirect a customer after some event.  For example, for some types of products you may want to redirect the customer directly to checkout instead of leave them on the current page (as is the default).  While there is an issue (still open as of 2017-12-07) in Drupal Commerce to [allow order types to have no cart](https://www.drupal.org/project/commerce/issues/2810723), we can accomplish this functionality by responding to the CART_ENTITY_ADD event.
 
 Two things need to happen:
 
